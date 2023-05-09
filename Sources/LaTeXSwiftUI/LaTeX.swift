@@ -202,7 +202,7 @@ extension LaTeX {
       let text = text(for: block)
       return block.isEquationBlock && !forceInline ?
         Text("\n") + text + Text("\n") :
-        LocalizedStringKey(text)
+        Text(LocalizedStringKey(text))
     }.reduce(Text(""), +)
   }
   
