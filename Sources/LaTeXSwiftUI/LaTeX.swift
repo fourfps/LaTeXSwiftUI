@@ -202,8 +202,8 @@ extension LaTeX {
       let text = text(for: block)
       return block.isEquationBlock && !forceInline ?
         Text("\n") + text + Text("\n") :
-        Text(LocalizedStringKey(text))
-    }.reduce(Text(""), +)
+        text
+    }.reduce(Text(LocalizedStringKey("")), +)
   }
   
   /// The view's input rendered as a vertical stack of views.
