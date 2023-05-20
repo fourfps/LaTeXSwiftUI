@@ -203,7 +203,7 @@ extension LaTeX {
       return block.isEquationBlock && !forceInline ?
         Text("\n") + text + Text("\n") :
         text
-    }.reduce(Text(LocalizedStringKey("")), +)
+    }.reduce(Text(LocalizedStringKey("")).textSelection(.enabled), +)
   }
   
   /// The view's input rendered as a vertical stack of views.

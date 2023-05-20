@@ -208,12 +208,12 @@ extension Component {
         switch errorMode {
         case .original:
           // Use the original tex input
-          text = Text(LocalizedStringKey(blockRenderingMode == .alwaysInline ? originalTextTrimmingNewlines : originalText))
+          text = Text(LocalizedStringKey(blockRenderingMode == .alwaysInline ? originalTextTrimmingNewlines : originalText)).textSelection(.enabled)
         case .error:
           // Use the error text
           text = Text(errorText)
         default:
-          text = Text(LocalizedStringKey(""))
+          text = Text(LocalizedStringKey("")).textSelection(.enabled)
         }
       }
       else if let (image, _) = convertToImage(
@@ -229,10 +229,10 @@ extension Component {
       }
     }
     else if blockRenderingMode == .alwaysInline {
-      text = Text(LocalizedStringKey(originalTextTrimmingNewlines))
+      text = Text(LocalizedStringKey(originalTextTrimmingNewlines)).textSelection(.enabled)
     }
     else {
-      text = Text(LocalizedStringKey(originalText))
+      text = Text(LocalizedStringKey(originalText)).textSelection(.enabled)
     }
     
     return text
